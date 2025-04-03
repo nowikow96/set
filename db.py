@@ -4,7 +4,7 @@ db = "user_data.json"
 sample = {"1": {"status": True, "attempts": 5, "r_value": 10, "count": 1}}
 
 
-def read(id):
+def read(id=0):
     try:
         with open(db) as f:
             data = json.load(f)
@@ -13,7 +13,10 @@ def read(id):
             json.dump(sample, f)
             data = json.load(f)
     else:
-        return data[id]
+        if id == 0:
+            return data
+        else:
+            return data[id]
 
 
 def write(id, **args):
@@ -29,3 +32,14 @@ def write(id, **args):
     else:
         with open(db, "w") as f:
             json.dump(data, f)
+
+
+def there_user(id):
+    data = read()
+    if id in data:
+        return "yes"
+    else:
+        return "no"
+
+
+print(there_user("1"))
