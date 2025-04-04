@@ -1,12 +1,15 @@
 from random import randint as r
-import json
-
 from config_bot import My_Message
+from db import read, write
 
 mess_info = My_Message()
 
+async def Game(id):
 
-class Games_Guess:
+
+
+
+"""class Games_Guess:
 
     def __init__(self, id: int):
         self.id = id
@@ -18,11 +21,4 @@ class Games_Guess:
         elif user_value < self.random_value:
             return mess_info.bol
         else:
-            return mess_info.win
-
-
-game = Games_Guess(123)
-
-for i in range(8):
-    x = int(input())
-    print(game.proba(x))
+            return mess_info.win"""

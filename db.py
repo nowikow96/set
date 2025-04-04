@@ -34,12 +34,9 @@ def write(id, **args):
             json.dump(data, f)
 
 
-def there_user(id):
+def user_in_db(id):
     data = read()
     if id in data:
-        return "yes"
+        return True
     else:
-        return "no"
-
-
-print(there_user("1"))
+        return False

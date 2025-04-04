@@ -12,17 +12,17 @@ bot = Bot(token=my_bot.token)
 
 @dp.message(Command(commands=["start"]))
 async def start(message=Message):
-    await message.answer(text=my_bot.start)
+    await message.answer(my_bot.start)
 
 
 @dp.message(Command(commands=["help"]))
 async def help(message=Message):
-    await message.answer(text=my_bot.help)
+    await message.answer(my_bot.help)
 
 
 @dp.message()
 async def text_mess(message=Message):
-    await message.answer(text=message.text)
+    await message.answer(message.text)
 
 
 if __name__ == "__main__":
